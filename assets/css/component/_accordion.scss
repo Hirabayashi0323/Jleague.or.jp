@@ -64,26 +64,26 @@
     position: relative;
     z-index: 1;
     @include sp(){
-      padding: 15px 0 10px;
-      }
-      &::before{
-        position: absolute;
-        top: -5px;
-        right: 0;
-        content: '';
-        width: 10px;
-        height: 5px;
-        background: #fff;
-      }
-      &::after{
-        position: absolute;
-        top: -5px;
-        right: 0;
-        content: '';
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background: $accent_red;
-      }
+      padding: 15px 20px 10px 0;
     }
+    &::before{
+      position: absolute;
+      top: -5px;
+      right: 0;
+      content: '';
+      width: 10px;
+      height: 5px;
+      background: #fff;
+    }
+    &::after{
+      position: absolute;
+      top: -5px;
+      right: 0;
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $accent_red;
+    }
+  }
 }
