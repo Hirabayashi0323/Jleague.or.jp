@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+.moreBtn{
+	position: relative;
+	margin: 40px auto 0;
+	display: flex;
+	@include sp(){
+		margin: 30px auto 0;
+	}
+	a{
+		display: inline-block;
+		margin: 0 auto;
+		line-height: 1.5;
+		max-width: 315px;
+		padding: 20px 80px;
+		border: 5px solid $accent_green;
+		border-radius: 20px;
+		text-decoration: none;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+		transition: background 0.3s $cubic;
+		-webkit-transition:background 0.3s $cubic;
+		@include sp(){
+			border-width: 4px;
+			border-radius: 15px;
+			padding: 16px 24px;
+		}
+		&:hover{
+			color: #fff;
+			background: $accent_green;
+		}
+	}
+}
+.searchBtn{
+	position: relative;
+	margin: 40px auto 0;
+	display: flex;
+	@include sp(){
+		margin: 30px auto 0;
+	}
+	input{
+		-webkit-appearance: none;
+		color: #fff;
+		background: #000;
+		font-size: 1rem;
+		border: 5px solid #fff;
+		border-radius: 20px;
+		display: inline-block;
+		margin: 0 auto;
+		line-height: 1.5;
+		max-width: 315px;
+		padding: 20px 80px;
+		outline:0;
+		text-decoration: none;
+		text-align: center;
+		vertical-align: middle;
+		font-weight: bold;
+		transition: background 0.3s $cubic;
+		-webkit-transition:background 0.3s $cubic;
+		@include sp(){
+			border-width: 4px;
+			border-radius: 15px;
+			padding: 16px 24px;
+		}
+		&:hover{
+			color: #fff;
+			background: $accent_green;
+			border: 5px solid $accent_green;
+		}
+	}
+}
+
+.blankLink{
+	&::after{
+		content: url(/assets/images/common/icon-external.svg);
+		display: inline-block;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+		vertical-align: baseline;
+		margin-left: .3em;
+		transform-origin: bottom left;
+	}
+}
+.arrowRed{
+	@include flexbox(nowrap,flex-start,center);
+	&::before{
+		content: '';
+		display: inline-block;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+		margin-right: 5px;
+		background: url(/assets/images/common/arrow-triangle.svg)left center no-repeat;
+		height: 20px;
+		width: 20px;
+	}
+	footer &,.gnav &{
+		&::before{
+		-webkit-transform: scale(0.5);
+    transform: scale(0.5);
+	}
+	}
+}
+
+.pdfLink{
+	&::after{
+		background: url(/assets/images/common/icon-pdf.svg)right center no-repeat;
+		content: '';
+		display: inline-block;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+		vertical-align: baseline;
+		margin-left: .3em;
+		transform-origin: bottom left;
+		height: 20px;
+		width: 32px;
+		@include sp(){
+			height: 14px;
+			width: 22px;
+			background-size: 100%;
+		}
+	}
+}

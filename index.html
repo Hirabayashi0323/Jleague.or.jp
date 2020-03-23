@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<title>公益社団法人 日本プロサッカーリーグ（Ｊリーグ）</title>
+<meta name="robots" content="index,follow">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!--#include virtual="/assets/inc/head.html" -->
+
+</head>
+
+<body id="top" class="top">
+  <!--#include virtual="/assets/inc/common_share.html" -->
+  <div class="wrap">
+  	<header id="pagetop">
+      <div class="container">
+        <h1><img src="/assets/images/common/top_logo.png" srcset="/assets/images/common/top_logo.png 1x, /assets/images/common/top_logo@2x.png 2x" alt="J.LEAGUE"></h1>
+        <div class="kv">
+          <div class="kv__title">
+            <h2>Our Philosophy</h2>
+            <div class="dots"></div>
+          </div>
+          <ul class="kv__list">
+            <li>日本サッカーの水準向上及び<br>サッカーの普及促進のために</li>
+            <li>豊かなスポーツ文化の振興及び<br>国民の心身の健全な発達への寄与</li>
+            <li>国際社会における交流及び<br>親善への貢献</li>
+          </ul>
+    		</div>
+      </div>
+      <!--#include virtual="/assets/inc/header_nav.html" -->
+  	</header>
+  	<main class="main">
+      <section class="contents" id="contents">
+        <ul>
+          <li>
+            <a href="/aboutj/">
+              <h2><span>01</span>Ｊリーグとは</h2>
+              <p>組織やロゴ、年間スケジュールについて</p>
+            </a>
+          </li>
+          <li>
+            <a href="/management/">
+              <h2><span>02</span>経営情報</h2>
+              <p>組織やロゴ、年間スケジュールについて</p>
+            </a>
+          </li>
+          <li>
+            <a href="/chairman/">
+              <h2><span>03</span>チェアマン</h2>
+              <p>社団法人日本プロサッカーリーグ理事長である村井満より</p>
+            </a>
+          </li>
+          <li>
+            <a href="/partner/">
+              <h2><span>04</span>オフィシャルパートナー</h2>
+              <p>Ｊリーグを支えるパートナー企業様のご紹介</p>
+            </a>
+          </li>
+          <li>
+            <a href="/regulation/">
+              <h2><span>05</span>規約・規程</h2>
+              <p>Ｊリーグ規約、選手の契約、放送権について</p>
+            </a>
+          </li>
+          <li>
+            <a href="/terminology/">
+              <h2><span>06</span>用語集</h2>
+              <p>Ｊリーグ、組織、大会などにおける用語説明</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="news" id="news">
+        <div class="news__title">
+          <a href="/release/">
+            <h2><span>07</span>ニュースリリース</h2>
+            <p>プレスリリースやイベント情報など</p>
+          </a>
+        </div>
+          <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <div class="moreBtn"><a href="/release/">もっと見る</a></div>
+      </section>
+  	</main>
+  	<!--/.main-->
+    <footer>
+      <!--#include virtual="/assets/inc/gnav.html" -->
+    </footer>
+  </div>
+
+<!--#include virtual="/assets/inc/js.html" -->
+
+<script>
+
+var kvSlideOpt;
+var kvSlider;
+
+//KVランダム表示
+var seed = Math.random();
+var randKv = seed ? Math.ceil(seed * 3 ) - 1 : 0;
+
+  kvSlideOpt = {
+    fade:true,
+    lazyLoad: 'progressive',
+    slidesToShow: 1,
+    autoplay: true,
+    dots:true,
+    arrows:false,
+    autoplaySpeed:4000,
+    speed:1000,
+    appendDots:$('.dots'),
+    initialSlide: randKv,
+    //dotsClass:'kv_dots',
+  };
+  kvSlider = $('.kv__list').slick(kvSlideOpt);
+
+
+
+
+
+$(window).on('load',function(){
+"use strict";
+	//modal
+	$('.modalImg').click(function(){
+		$('body').css({'height':'100%','overflow-y':'hidden'});
+		$('.modal').fadeIn(500);
+	});
+	$('#modalClose').click(function(){
+		$('body').css({'height':'auto','overflow-y':'auto'});
+
+		$('.modal').fadeOut(500);
+	});
+});//END function
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+
+//list
+.list{
+	display: block;
+	li{
+		 padding:0 0 1em 0;
+		 position: relative;
+		 &::before {
+				position: absolute;
+				-moz-background-clip:padding;
+				-webkit-background-clip:padding-box;
+				background-clip:padding-box;
+				position:absolute;
+				left: -1.3em;
+				top: 1em;
+				transform:translateY(-50%);
+				-webkit-transform:translateY(-50%);
+				@include sp(){
+					left: -1em;
+				}
+		 }
+		 &:last-child{
+			 padding:0;
+		 }
+	}
+	&__circle{
+		@extend .list;
+		padding-inline-start: 45px;
+		@include sp(){
+			padding-inline-start: 26px;
+		}
+		li{
+			&::before{
+				content: '';
+				width:  10px;
+				height:  10px;
+				background-color: $accent_red;
+				border-radius:  50%;
+				@include sp(){
+					width:  5px;
+					height:  5px;
+				}
+			}
+		}
+	}
+	&__philosophy{
+		@extend .list;
+		padding-inline-start: 40px;
+		@include sp(){
+			padding-inline-start: 27px;
+		}
+		li{
+			&::before{
+				content: '一、';
+				left: -2em;
+			}
+		}
+	}
+	&__num{
+		@extend .list;
+		counter-reset: item;
+		padding-inline-start: 52px;
+		@include sp(){
+			padding-inline-start: 32px;
+		}
+		li{
+			&::before{
+				counter-increment: item;
+			  content: counter(item)'.';
+				left: -1.8em;
+			}
+		}
+	}
+	&__link{
+		@extend .list;
+		padding-inline-start: 0;
+		line-height: 1.5;
+		@include sp(){
+			padding-inline-start: 0;
+		}
+		li{
+			padding: 20px 0 20px 25px;
+			border-bottom: 1px solid $accent_gray;
+			@include flexbox(nowrap,flex-start,center);
+			@include sp(){
+					padding: 20px 0 20px 18px;
+			}
+			&:first-child{
+				border-top: 1px solid $accent_gray;
+			}
+			&::before{
+				content: '';
+				left: 0;
+				top: calc(20px + .75rem);
+				background: url(/assets/images/common/arrow-triangle_green.svg)left center no-repeat;
+				height: 20px;
+				width: 20px;
+				@include sp(){
+					height: 14px;
+					width: 14px;
+					background-size: 70%;
+				}
+			}
+			a{
+				font-weight: bold;
+				color: $accent_black;
+				transition:all .3s $cubic;
+				-webkit-transition: all .3s $cubic;
+				&:hover{
+					color: $accent_red;
+					text-decoration: none !important;
+				}
+			}
+			&:last-child{
+ 			 padding: 20px 0 20px 25px;
+			 @include sp(){
+ 					padding: 20px 0 20px 18px;
+ 			}
+ 		 }
+		}
+		&__2colum{
+			@extend .list__link;
+			@include flexbox(wrap,flex-start,flex-start);
+			li{
+				width: calc(50% - 40px);
+					@include sp(){
+						width: 100%;
+					}
+					&:nth-child(odd){
+						margin-right: 80px;
+						@include sp(){
+							margin-right: 0;
+						}
+					}
+					&:nth-child(2){
+						border-top: 1px solid $accent_gray;
+						@include sp(){
+							border-top: none;
+						}
+					}
+				}
+			}
+	}
+}

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.table{
+	width: 100%;
+	font-size: 0.7rem;
+	&--01{
+		@extend .table;
+		thead{
+			border-top: 1px solid $accent_gray;
+			border-left: 1px solid $accent_gray;
+			border-bottom: 1px solid $accent_gray;
+			background: #fff;
+			font-weight: bold;
+			tr{
+				th{
+					padding: 15px 20px;
+					text-align: center;
+					border-right: 1px solid $accent_gray;
+					vertical-align: middle;
+					@include sp(){
+						padding: 15px;
+						font-size: .85rem;
+					}
+				}
+			}
+		}
+		tbody{
+			border-left: 1px solid $accent_gray;
+			tr{
+				border-bottom: 1px solid $accent_gray;
+				td{
+					padding: 15px 20px;
+					text-align: left;
+					border-right: 1px solid $accent_gray;
+					vertical-align: middle;
+					@include sp(){
+						padding: 15px;
+						font-size: .85rem;
+					}
+				}
+				&:nth-child(even){
+					background: $accent_ltgray;
+				}
+			}
+		}
+		.clubmember &{
+			td:first-child{
+				width: 30%;
+				@include sp(){
+					width: 20%;
+				}
+			}
+		}
+	}
+}
+
+.scroll_table{
+	@include sp(){
+		display: block;
+		overflow-x: scroll;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+	}
+}

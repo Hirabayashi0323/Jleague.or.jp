@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+// ページ全体の横幅
+$box_width: 960px;
+$max_width: 1600px;
+
+// アクセントカラー
+$accent_red: #E62233;
+$accent_green: #0F9956;
+$accent_black: #000000;
+$accent_gray:#D9D9D9;
+$accent_ltgray:#F2F2F2;
+
+// ベースカラー
+$text: #000;
+
+// font-family
+$fontJP: YakuHanJPs , 'Noto Sans JP', sans-serif;
+$fontENG: 'industry' , sans-serif;
+$fontIconFree: "Font Awesome 5 Free";
+$fontIconBrand: "Font Awesome 5 Brands";
+
+//ブレイクポイント
+$breakpoint: "1023px";
+
+//　transitionタイミング
+$cubic: cubic-bezier(.8, 0, .3, 1);

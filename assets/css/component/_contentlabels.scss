@@ -1,0 +1,24 @@
+
+.contentlabels{
+	margin: 0 auto 80px;
+	@include sp(){
+		margin: 0 auto 60px;
+		padding: 0 8%;
+	}
+}
+
+.snsbox{
+	@include flexbox(nowrap,flex-end,center);
+	@include sp(){
+		@include flexbox(nowrap,flex-start,center);
+	}
+	li{
+		margin-left: 5px;
+		display: flex;
+		&.fb{
+			> div{
+				display: flex;
+			}
+		}
+	}
+}
