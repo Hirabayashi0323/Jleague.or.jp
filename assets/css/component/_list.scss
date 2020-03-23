@@ -29,7 +29,7 @@
 		@include sp(){
 			padding-inline-start: 26px;
 		}
-		li{
+		> li{
 			&::before{
 				content: '';
 				width:  10px;
@@ -42,6 +42,15 @@
 				}
 			}
 		}
+		&.j1 li::before{
+			background-color: #e60012;
+		}
+		&.j2 li::before{
+			background-color: #007f41;
+		}
+		&.j3 li::before{
+			background-color: $accent_black;
+		}
 	}
 	&__philosophy{
 		@extend .list;
@@ -49,7 +58,7 @@
 		@include sp(){
 			padding-inline-start: 27px;
 		}
-		li{
+		> li{
 			&::before{
 				content: '一、';
 				left: -2em;
@@ -63,7 +72,7 @@
 		@include sp(){
 			padding-inline-start: 32px;
 		}
-		li{
+		> li{
 			&::before{
 				counter-increment: item;
 				content: counter(item)'.';
@@ -78,7 +87,7 @@
 		@include sp(){
 			padding-inline-start: 0;
 		}
-		li{
+		> li{
 			padding: 20px 0 20px 25px;
 			border-bottom: 1px solid $accent_gray;
 			@include flexbox(nowrap,flex-start,center);
@@ -142,7 +151,7 @@
 		&__2colum{
 			@extend .list__link;
 			@include flexbox(wrap,flex-start,flex-start);
-			li{
+			> li{
 				width: calc(50% - 40px);
 				@include sp(){
 					width: 100%;
@@ -159,6 +168,20 @@
 						border-top: none;
 					}
 				}
+			}
+		}
+	}
+	&__asta{
+		@extend .list;
+		padding-inline-start: 26px;
+		@include sp(){
+			padding-inline-start: 18px;
+		}
+		> li{
+			padding:0 0 0.5em 0;
+			&::before{
+				content: '※ ';
+				left: -1.2em;
 			}
 		}
 	}

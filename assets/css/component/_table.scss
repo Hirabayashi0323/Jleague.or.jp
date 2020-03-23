@@ -5,29 +5,24 @@
 	font-size: 0.7rem;
 	&--01{
 		@extend .table;
+		border-top: 1px solid $accent_gray;
 		thead{
-			border-top: 1px solid $accent_gray;
-			border-left: 1px solid $accent_gray;
-			border-bottom: 1px solid $accent_gray;
 			background: #fff;
-			font-weight: bold;
+		}
 			tr{
+				border-left: 1px solid $accent_gray;
+				border-bottom: 1px solid $accent_gray;
 				th{
 					padding: 15px 20px;
 					text-align: center;
 					border-right: 1px solid $accent_gray;
 					vertical-align: middle;
+					font-weight: bold;
 					@include sp(){
 						padding: 15px;
 						font-size: .85rem;
 					}
 				}
-			}
-		}
-		tbody{
-			border-left: 1px solid $accent_gray;
-			tr{
-				border-bottom: 1px solid $accent_gray;
 				td{
 					padding: 15px 20px;
 					text-align: left;
@@ -38,16 +33,21 @@
 						font-size: .85rem;
 					}
 				}
-				&:nth-child(even){
-					background: $accent_ltgray;
-				}
 			}
-		}
 		.clubmember &{
 			td:first-child{
 				width: 30%;
 				@include sp(){
 					width: 20%;
+				}
+			}
+		}
+		&.alternate{//交互にBGグレー
+			tbody{
+				tr{
+					&:nth-child(even){
+						background: $accent_ltgray;
+					}
 				}
 			}
 		}

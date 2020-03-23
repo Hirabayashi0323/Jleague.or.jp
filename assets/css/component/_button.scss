@@ -103,6 +103,10 @@
 }
 
 .pdfLink{
+	@include flexbox(wrap,center,center);
+	@include sp(){
+		display: table;
+	}
 	&::after{
 		background: url(/assets/images/common/icon-pdf.svg)right center no-repeat;
 		content: '';
@@ -118,6 +122,8 @@
 			height: 14px;
 			width: 22px;
 			background-size: 100%;
+			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 }
