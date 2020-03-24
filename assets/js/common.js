@@ -24,7 +24,8 @@ $(window).load(function() {
 	$(function() {
   var $win = $(window),
       $header = $('.nav'),
-      animationClass = 'is-animation';
+      animationClass = 'is-animation',
+			toplogoClass = 'is-logo';
 
   $win.on('load scroll', function() {
     var value = $(this).scrollTop();
@@ -34,7 +35,17 @@ $(window).load(function() {
       $header.removeClass(animationClass);
     }
   });
+//トップページロゴ
+	$win.on('load scroll', function() {
+		var value = $(this).scrollTop();
+    if ( value > 700 ) {
+      $header.addClass(toplogoClass);
+    } else {
+      $header.removeClass(toplogoClass);
+    }
+  });
 });
+
 
 	//pagetop
 	$(".pagetop").click(function(){
