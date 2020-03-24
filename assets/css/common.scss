@@ -833,9 +833,9 @@ main{
 			@include sp(){
 				padding: 20px 0 ;
 			}
-			h4{
-				margin-bottom: 5px;
-			}
+			// h4{
+			// 	margin-bottom: 5px;
+			// }
 			a{
 				transition: all 0.3s $cubic;
 				-webkit-transition: all 0.3s $cubic;
@@ -885,6 +885,12 @@ main{
 		 }
 		}
 		h3{
+			margin:80px 0 40px;
+			@include sp(){
+			 margin:30px 0 20px;
+		 }
+		}
+		h4{
 			margin:0 0 40px;
 			@include sp(){
 			 margin:0 0 20px;
@@ -1259,12 +1265,12 @@ footer,.gnav	{
 ========================================================================== */
 
 .terminologybox{
-	h4{
-		margin-bottom: 10px;
-		@include sp(){
-			margin-top: 20px;
-		}
-	}
+	// h4{
+	// 	margin-bottom: 10px;
+	// 	@include sp(){
+	// 		margin-top: 20px;
+	// 	}
+	// }
 	dl{
 		dt{
 			font-weight: 700;

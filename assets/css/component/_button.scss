@@ -103,9 +103,9 @@
 }
 
 .pdfLink{
-	@include flexbox(wrap,center,center);
+	//@include flexbox(wrap,flex-start,center);
+	display: table;
 	@include sp(){
-		display: table;
 	}
 	&::after{
 		background: url(/assets/images/common/icon-pdf.svg)right center no-repeat;
@@ -113,7 +113,7 @@
 		display: inline-block;
     -webkit-transform: scale(1);
     transform: scale(1);
-		vertical-align: baseline;
+		vertical-align: middle;
 		margin-left: .3em;
 		transform-origin: bottom left;
 		height: 20px;
@@ -123,7 +123,6 @@
 			width: 22px;
 			background-size: 100%;
 			//display: table-cell;
-			vertical-align: middle;
 		}
 	}
 }
