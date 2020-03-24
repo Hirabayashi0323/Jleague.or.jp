@@ -14,6 +14,13 @@
 
 <body id="second" class="aboutj">
   <!--#include virtual="/assets/inc/common_share.html" -->
+  <!-- ローディング画面 -->
+<div id="loading">
+  <div class="spinner">
+    <img src="/assets/images/common/j-mark.svg" alt="J.LEAGUE">
+  </div>
+</div>
+
   <div class="wrap">
   	<header id="pagetop">
       <!--#include virtual="/assets/inc/header_nav.html" -->
@@ -129,6 +136,26 @@
   </div>
 
 <!--#include virtual="/assets/inc/js.html" -->
+<script>
+// var progress = 0;
+// var imgCount = $('img').length;
+// $("img").each(function(){
+//    var src = $(this).attr('src');
+//    $("<img>").attr('src',src).on('load',function(){
+//      progress++;
+//    });
+// });
+// setInterval(function(){
+//    $("#progress-bar").css({
+//      'width': (progress / imgCount) * 100 + '%'
+//    });
+// }, 1);
+
+  window.onload = function() {
+    $("#loading .spinner").addClass("loaded");
+}
+</script>
+
 
 </body>
 </html>
