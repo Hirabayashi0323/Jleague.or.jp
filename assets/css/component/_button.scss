@@ -118,7 +118,9 @@
 		display: inline-block;
     -webkit-transform: scale(1);
     transform: scale(1);
-		vertical-align: middle;
+		vertical-align: baseline;
+		position: relative;
+		top: .1em;
 		margin-left: .3em;
 		transform-origin: bottom left;
 		height: 20px;

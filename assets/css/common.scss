@@ -938,6 +938,12 @@ main{
 	@include sp(){
 		padding: 20px;
 	}
+	> h3{
+		margin: 0 0 40px !important;
+		@include sp(){
+			margin: 0 0 20px !important;
+		}
+	}
 }
 
 
@@ -1290,6 +1296,8 @@ footer,.gnav	{
   top: 0;
   left: 0;
   z-index: 999999;
+	transition: all .3s $cubic;
+	-webkit-transition: all .3s $cubic;
 	@include flexbox(wrap,center,center);
 }
 .spinner {
@@ -1298,16 +1306,17 @@ footer,.gnav	{
 	position: relative;
 	img{
 		width: 100%;
-		transform: scale(1, 1);
+		transform: scale(1);
 		transform-origin: center center;
-		transition: transform 2.3s $cubic;
-		-webkit-transition: transform 2.3s $cubic;
+		transition: transform .6s $cubic;
+		-webkit-transition: transform .6s $cubic;
+		&.zoom{
+			transform: scale(150);
+		}
 	}
-		&::after {
-			position: absolute;
-			bottom: -90px;
-			left: 0;
-			content: '';
+		.bar {
+			display: block;
+			margin-top: 90px;
 			width: 100%;
 			height: 1px;
 			background: $accent_black;
@@ -1315,22 +1324,15 @@ footer,.gnav	{
 			transform-origin: left top;
 			transition: transform .3s $cubic;
 			-webkit-transition: transform .3s $cubic;
-		}
-		&.loaded{
-			// width: 100%;
-			// height: 100%;
-			// overflow: hidden;
-			&::after {
-			transform: scale(1, 1);
+			&.start{
+				transform: scale(1, 1);
 			}
-			// img{
-			// 	transform: scale(100, 100);
-			// }
 		}
+
 }
 
 
-// .loaded {
-//   opacity: 0;
-//   visibility: hidden;
-// }
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -61,4 +61,29 @@
 		white-space: nowrap;
 		-webkit-overflow-scrolling: touch;
 	}
+	&.both{//pcにも適用
+		display: block;
+		overflow-x:auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		box-sizing: initial;
+		.j1 &{
+			width: $box_width;
+			height: calc((1rem + 42px) * 33);
+			@include sp(){
+				width: 100%;
+				height: calc((1.6rem + 32px) * 33);
+			}
+		}
+		table{
+			th{
+				&:first-child{
+					width: 100px;
+					@include sp(){
+						width: 80px;
+					}
+				}
+			}
+		}
+	}
 }

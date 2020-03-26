@@ -18,6 +18,7 @@
 <div id="loading">
   <div class="spinner">
     <img src="/assets/images/common/j-mark.svg" alt="J.LEAGUE">
+    <div class="bar"></div>
   </div>
 </div>
 
@@ -29,8 +30,6 @@
       <section class="main_contents">
         <h1><span>01</span>Jリーグとは</h1>
         <div class="contentbox">
-          <script async src="https://cse.google.com/cse.js?cx=005181077679890584242:7ytwusdak6v"></script>
-<div class="gcse-search"></div>
           <h2>Jリーグ理念</h2>
           <ul class="list__philosophy">
             <li>list item_philosophy</li>
@@ -136,6 +135,8 @@
   </div>
 
 <!--#include virtual="/assets/inc/js.html" -->
+
+
 <script>
 // var progress = 0;
 // var imgCount = $('img').length;
@@ -151,9 +152,66 @@
 //    });
 // }, 1);
 
-  window.onload = function() {
-    $("#loading .spinner").addClass("loaded");
-}
+//   window.onload = function() {
+//     $("#loading .spinner").addClass("bar");
+// }
+
+// $(function(){
+//   function move(){
+//     $("#loading .spinner").addClass("bar").queue(function(){
+//       $('.bar img').css('transform', 'scale(105, 105)').dequeue();
+//     })
+//   }
+//   move();
+//
+// });
+
+// $(function() {
+// 	$.when(
+//     $("#loading .bar").addClass("start").delay(3000),
+//     $('.spinner img').addClass("zoom")
+// 	).done(function() {
+// 		$('#loading').addClass("loaded");
+// 	})
+// });
+
+
+$(function(){
+  function move(){
+    $("#loading .bar").addClass("start").delay(500).queue(function(){
+      $('.bar').css('opacity', '0').dequeue();
+    })
+    $('.spinner img').animate({
+      transform:'scale(1)'
+    },100, 'swing').delay(200).queue(function(){
+      $('.spinner img').css('transform', 'scale(150)').dequeue();
+    })
+    $('#loading').animate({
+      visibility:'inherit'
+    }, 800, 'swing').delay(500).queue(function(){
+      $('#loading').fadeOut(400).dequeue();
+    })
+    //$('#loading').addClass("loaded")
+  }
+  move();
+});
+
+
+
+// $(function(){
+//   function move(){
+//     $("#loading .bar").addClass("start").delay(1000).queue(function(){
+//       $('.bar').css('opacity', '0').dequeue();
+//     })
+//     $('.spinner img').animate({
+//       $(this).css( { transform: 'scale(150)' } )
+//     },'fast', 'swing',function(){
+//       $('#loading').addClass("loaded")
+//     })
+//     //$('#loading').addClass("loaded")
+//   }
+//   move();
+// });
 </script>
 
 
