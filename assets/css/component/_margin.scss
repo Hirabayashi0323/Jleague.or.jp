@@ -19,6 +19,13 @@
   }
 }
 
+.mB_04{
+  margin:0 auto 10px !important;
+  @include sp(){
+    margin:0 auto 10px !important;
+  }
+}
+
 .mB_00{
   margin:0 auto !important;
 }

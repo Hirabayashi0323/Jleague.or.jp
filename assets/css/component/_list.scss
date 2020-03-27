@@ -78,6 +78,11 @@
 				content: counter(item)'.';
 				left: -1.8em;
 			}
+			> dl{
+				dt{
+					font-weight: bold;
+				}
+			}
 		}
 	}
 	&__link{
@@ -137,6 +142,7 @@
 				width: 100%;
 				dt{
 					padding-bottom: 20px;
+					font-weight: bold;
 				}
 				dd{
 					padding-left: 20px;
@@ -178,7 +184,7 @@
 			padding-inline-start: 18px;
 		}
 		> li{
-			padding:0 0 0.5em 0;
+			padding:0 ;
 			&::before{
 				content: '※ ';
 				left: -1.2em;

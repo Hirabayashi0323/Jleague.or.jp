@@ -69,10 +69,10 @@
 		box-sizing: initial;
 		.j1 &{
 			width: $box_width;
-			height: calc((1rem + 42px) * 33);
+			height: calc((1rem + 40px) * 33);
 			@include sp(){
 				width: 100%;
-				height: calc((1.6rem + 32px) * 33);
+				height: calc((1.55rem + 32px) * 33);
 			}
 		}
 		table{

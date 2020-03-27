@@ -14,7 +14,7 @@
 </head>
 
 <body id="top" class="top">
-  <!--#include virtual="/assets/inc/common_share.html" -->
+<!--#include virtual="/assets/inc/loading.html" -->
   <div class="wrap">
   	<header id="pagetop">
       <div class="container">
@@ -112,9 +112,38 @@
   </div>
 
 <!--#include virtual="/assets/inc/js.html" -->
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
 <script>
+//loding
+const cubic = '[.8, 0, .3, 1]'
 
+$(function() {
+  $('#loading .bar').addClass('start').delay(800).queue(function(){
+    $('.bar').css('opacity', '0').dequeue()
+  }),
+  $('#j-mark').velocity({
+    top: 100
+  },{
+    duration:500,
+    delay:500
+  }).velocity({
+    transform : 'scale(150, 150)'
+  },{
+    duration: 300,
+    easing: cubic
+  })
+  $('#loading').delay(2000).queue(function(){
+    $(this).velocity({
+      opacity: 0 ,
+      visibility:'hidden'
+    }, {
+      duration: 300,
+      easing: cubic
+    });
+  });
+});
+
+//スライダー
 var kvSlideOpt;
 var kvSlider;
 
@@ -137,23 +166,6 @@ var randKv = seed ? Math.ceil(seed * 3 ) - 1 : 0;
   };
   kvSlider = $('.kv__list').slick(kvSlideOpt);
 
-
-
-
-
-$(window).on('load',function(){
-"use strict";
-	//modal
-	$('.modalImg').click(function(){
-		$('body').css({'height':'100%','overflow-y':'hidden'});
-		$('.modal').fadeIn(500);
-	});
-	$('#modalClose').click(function(){
-		$('body').css({'height':'auto','overflow-y':'auto'});
-
-		$('.modal').fadeOut(500);
-	});
-});//END function
 </script>
 </body>
 </html>

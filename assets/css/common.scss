@@ -1296,8 +1296,8 @@ footer,.gnav	{
   top: 0;
   left: 0;
   z-index: 999999;
-	transition: all 1.2s $cubic;
-	-webkit-transition: all 1.2s $cubic;
+	transition: all .3s $cubic;
+	-webkit-transition: all .3s $cubic;
 	@include flexbox(wrap,center,center);
 }
 .spinner {
@@ -1332,8 +1332,8 @@ footer,.gnav	{
 			background: $accent_black;
 			transform: scale(0, 1);
 			transform-origin: left top;
-			transition: transform .3s $cubic;
-			-webkit-transition: transform .3s $cubic;
+			transition: transform .9s $cubic;
+			-webkit-transition: transform .9s $cubic;
 			&.start{
 				transform: scale(1, 1);
 			}
