@@ -117,31 +117,66 @@
 //loding
 const cubic = '[.8, 0, .3, 1]'
 
-$(function() {
-  $('#loading .bar').addClass('start').delay(800).queue(function(){
-    $('.bar').css('opacity', '0').dequeue()
-  }),
-  $('#j-mark').velocity({
-    top: 100
-  },{
-    duration:500,
-    delay:500
-  }).velocity({
-    transform : 'scale(150, 150)'
-  },{
-    duration: 300,
-    easing: cubic
-  })
-  $('#loading').delay(2000).queue(function(){
-    $(this).velocity({
-      opacity: 0 ,
-      visibility:'hidden'
-    }, {
+  $(function() {
+    $('#loading .bar').addClass('start');
+    $('#loading .bar')
+    .velocity({
+      opacity: 0
+    },{
+      delay:800,
       duration: 300,
       easing: cubic
     });
+    $('#j-mark')
+    .velocity({
+      width: 100
+    },{
+      duration:500,
+      delay:500
+    }).velocity({
+      /*プロパティ*/
+      transform : 'scale(150, 150)'
+    },{
+      /*オプション*/
+      duration: 300,
+      easing: cubic,
+      complete: function(){
+        $('#loading').velocity({
+          opacity: 0 ,
+          visibility:'hidden'
+        },{
+          duration: 300,
+          delay:500,
+          easing: cubic
+        });
+      }
+    });
   });
-});
+// $(function() {
+//   $('#loading .bar').addClass('start').delay(800).queue(function(){
+//     $('#bar').css('opacity', '0').dequeue()
+//   }),
+//   $('#j-mark').velocity({
+//     top: 100
+//   },{
+//     duration:500,
+//     delay:500
+//   }).velocity({
+//     transform : 'scale(150, 150)'
+//   },{
+//     duration: 300,
+//     easing: cubic
+//   })
+//   $('#loading').delay(2000).queue(function(){
+//     $(this).velocity({
+//       opacity: 0 ,
+//       visibility:'hidden'
+//     }, {
+//       duration: 300,
+//       easing: cubic
+//     });
+//   });
+// });
 
 //スライダー
 var kvSlideOpt;
