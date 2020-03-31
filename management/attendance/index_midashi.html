@@ -12,7 +12,7 @@
   <!--#include virtual="/assets/inc/head.html" -->
 </head>
 
-<body id="second" class="management attendance j1">
+<body id="second" class="management attendance j1" onLoad="FixedMidashi.create();">
   <div class="wrap">
     <header id="pagetop">
       <!--#include virtual="/assets/inc/header_nav.html" -->
@@ -22,10 +22,10 @@
         <h1>J1クラブ別入場者数</h1>
         <div class="contentlabels">
         </div>
-        <div class="contentbox" data-target="scrollable-icon">
+        <div class="contentbox">
           <p class="txtRight txtXxsmall mB_03">GP:ホームゲーム数、Atten.:入場者数</p>
           <div class="scroll_table both">
-            <table class="table--01 data alternate">
+            <table class="table--01 data alternate" _fixedhead="rows:0; cols:1; div-auto-size: none;">
               <thead>
                 <tr>
                   <th>年度▶</th>
@@ -343,19 +343,9 @@
 
   <!--#include virtual="/assets/inc/js.html" -->
   <script type="text/javascript">
-  // window.onload = function() {
-  //   $('.scroll-hint-icon-wrap').addClass('is-active');
-  // }
-
-  // const pos = $('.scroll_table').offset().top;
-  //
-  // $(window).scroll(function() {
-  //     let scroll = $(this).scrollTop();
-  //
-  //     if( scroll >= pos) {
-  //         $('.scroll-hint-icon-wrap').addClass('is-active');
-  //     }
-  // })
+  window.onload = function() {
+    $('.scroll-hint-icon-wrap').addClass('is-active')
+  }
 
   //scroll-hint
   window.addEventListener('DOMContentLoaded', function(){

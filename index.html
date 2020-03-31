@@ -116,6 +116,7 @@
 <script>
 //loding
 const cubic = '[.8, 0, .3, 1]'
+const cubicSvg = '[.075, .82, .165, 1]'
 
   $(function() {
     $('#loading .bar').addClass('start');
@@ -139,7 +140,7 @@ const cubic = '[.8, 0, .3, 1]'
     },{
       /*オプション*/
       duration: 300,
-      easing: cubic,
+      easing: cubicSvg,
       complete: function(){
         $('#loading').velocity({
           opacity: 0 ,
