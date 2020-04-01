@@ -133,7 +133,14 @@
 			white-space: normal;
 			min-width: 150px;
 			@include sp(){
-				min-width: 100px;
+				min-width: 80px;
+			}
+			.cup &{
+				min-width: 300px;
+				@include sp(){
+					max-width: 80px;
+					min-width: 50px;
+				}
 			}
 		}
 		tr{
