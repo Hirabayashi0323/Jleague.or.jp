@@ -95,7 +95,7 @@
 }
 //
 // //scrollhint
-.table--01 tr{
+.scroll_table.both .table--01 tr{
 	border-left: none;
 }
 
@@ -132,6 +132,9 @@
 			border:none;
 			white-space: normal;
 			min-width: 150px;
+			@include sp(){
+				min-width: 100px;
+			}
 		}
 		tr{
 			border-bottom:none !important;
