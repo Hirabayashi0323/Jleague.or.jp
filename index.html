@@ -118,41 +118,110 @@
 const cubic = '[.8, 0, .3, 1]'
 const cubicSvg = '[.075, .82, .165, 1]'
 
-  $(function() {
-    $('#loading .bar').addClass('start');
-    $('#loading .bar')
-    .velocity({
-      opacity: 0
-    },{
-      delay:800,
-      duration: 300,
-      easing: cubic
+  // $(function() {
+  //   $('#loading .bar').addClass('start');
+  //   $('#loading .bar')
+  //   .velocity({
+  //     opacity: 0
+  //   },{
+  //     delay:800,
+  //     duration: 300,
+  //     easing: cubic
+  //   });
+  //   $('#j-mark')
+  //   .velocity({
+  //     width: 100
+  //   },{
+  //     duration:500,
+  //     delay:500
+  //   }).velocity({
+  //     transform : 'scale(150, 150)'
+  //   },{
+  //     duration: 700,
+  //     easing: cubicSvg,
+  //     complete: function(){
+  //       $('#loading').velocity({
+  //         opacity: 0 ,
+  //         visibility:'hidden'
+  //       },{
+  //         duration: 300,
+  //         delay:500,
+  //         easing: cubic
+  //       });
+  //     }
+  //   });
+  // });
+
+//PC、SP出し分け
+  if (window.matchMedia( "(max-width: 1023px)" ).matches) {
+    $(function() {
+      $('#loading .bar').addClass('start');
+      $('#loading .bar')
+      .velocity({
+        opacity: 0
+      },{
+        delay:800,
+        duration: 300,
+        easing: cubic
+      });
+      $('#j-mark')
+      .velocity({
+        width: 100
+      },{
+        duration:500,
+        delay:500
+      }).velocity({
+        transform : 'scale(150, 150)'
+      },{
+        duration: 850,
+        easing: cubicSvg,
+        complete: function(){
+          $('#loading').velocity({
+            opacity: 0 ,
+            visibility:'hidden'
+          },{
+            duration: 300,
+            delay:500,
+            easing: cubic
+          });
+        }
+      });
     });
-    $('#j-mark')
-    .velocity({
-      width: 100
-    },{
-      duration:500,
-      delay:500
-    }).velocity({
-      /*プロパティ*/
-      transform : 'scale(150, 150)'
-    },{
-      /*オプション*/
-      duration: 300,
-      easing: cubicSvg,
-      complete: function(){
-        $('#loading').velocity({
-          opacity: 0 ,
-          visibility:'hidden'
-        },{
-          duration: 300,
-          delay:500,
-          easing: cubic
-        });
-      }
+  } else {
+    $(function() {
+      $('#loading .bar').addClass('start');
+      $('#loading .bar')
+      .velocity({
+        opacity: 0
+      },{
+        delay:800,
+        duration: 300,
+        easing: cubic
+      });
+      $('#j-mark')
+      .velocity({
+        width: 100
+      },{
+        duration:500,
+        delay:500
+      }).velocity({
+        transform : 'scale(150, 150)'
+      },{
+        duration: 700,
+        easing: cubicSvg,
+        complete: function(){
+          $('#loading').velocity({
+            opacity: 0 ,
+            visibility:'hidden'
+          },{
+            duration: 300,
+            delay:500,
+            easing: cubic
+          });
+        }
+      });
     });
-  });
+  }
 
 //スライダー
 var kvSlideOpt;
