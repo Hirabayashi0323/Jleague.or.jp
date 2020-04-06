@@ -154,6 +154,7 @@ const cubicSvg = '[.075, .82, .165, 1]'
 
 //PC、SP出し分け
   if (window.matchMedia( "(max-width: 1023px)" ).matches) {
+    //スマホ対応
     $(function() {
       $('#loading .bar').addClass('start');
       $('#loading .bar')
@@ -181,13 +182,14 @@ const cubicSvg = '[.075, .82, .165, 1]'
             visibility:'hidden'
           },{
             duration: 300,
-            delay:500,
+            //delay:200,
             easing: cubic
           });
         }
       });
     });
   } else {
+    //PC対応
     $(function() {
       $('#loading .bar').addClass('start');
       $('#loading .bar')
@@ -215,7 +217,7 @@ const cubicSvg = '[.075, .82, .165, 1]'
             visibility:'hidden'
           },{
             duration: 300,
-            delay:500,
+            //delay:200,
             easing: cubic
           });
         }
