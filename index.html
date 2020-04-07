@@ -15,8 +15,11 @@
 
 <body id="top" class="top">
 <!--#include virtual="/assets/inc/loading.html" -->
+<!-- お知らせ -->
+<!--#include virtual="/assets/inc/information.html" -->
   <div class="wrap">
   	<header id="pagetop">
+      <!--#include virtual="/assets/inc/header_nav.html" -->
       <div class="container">
         <h1><img src="/assets/images/common/top_logo.png" srcset="/assets/images/common/top_logo.png 1x, /assets/images/common/top_logo@2x.png 2x" alt="J.LEAGUE"></h1>
         <div class="kv">
@@ -31,7 +34,7 @@
           </ul>
     		</div>
       </div>
-      <!--#include virtual="/assets/inc/header_nav.html" -->
+
   	</header>
   	<main class="main">
       <section class="contents" id="contents">
@@ -118,40 +121,6 @@
 const cubic = '[.8, 0, .3, 1]'
 const cubicSvg = '[.075, .82, .165, 1]'
 
-  // $(function() {
-  //   $('#loading .bar').addClass('start');
-  //   $('#loading .bar')
-  //   .velocity({
-  //     opacity: 0
-  //   },{
-  //     delay:800,
-  //     duration: 300,
-  //     easing: cubic
-  //   });
-  //   $('#j-mark')
-  //   .velocity({
-  //     width: 100
-  //   },{
-  //     duration:500,
-  //     delay:500
-  //   }).velocity({
-  //     transform : 'scale(150, 150)'
-  //   },{
-  //     duration: 700,
-  //     easing: cubicSvg,
-  //     complete: function(){
-  //       $('#loading').velocity({
-  //         opacity: 0 ,
-  //         visibility:'hidden'
-  //       },{
-  //         duration: 300,
-  //         delay:500,
-  //         easing: cubic
-  //       });
-  //     }
-  //   });
-  // });
-
 //PC、SP出し分け
   if (window.matchMedia( "(max-width: 1023px)" ).matches) {
     //スマホ対応
@@ -224,6 +193,7 @@ const cubicSvg = '[.075, .82, .165, 1]'
       });
     });
   }
+
 
 //スライダー
 var kvSlideOpt;

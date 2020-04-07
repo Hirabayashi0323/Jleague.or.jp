@@ -20,6 +20,7 @@
 @import "component/_breadcrumb";
 @import "component/_accordion";
 @import "component/_contentlabels";
+@import "component/_information";
 
 /* ==========================================================================
    Common
@@ -324,11 +325,17 @@ header{
 }
 
 //トップページのみの処理
-.top header .nav .navlogo{
-	img{
-	opacity: 0;
-	transition: opacity .3s $cubic;
-	-webkit-transition: opacity .3s $cubic;
+.top header .nav {
+		top:calc(.7rem + 40px);
+		&.is-animation{
+			top:0;
+		}
+	.navlogo{
+		img{
+		opacity: 0;
+		transition: opacity .3s $cubic;
+		-webkit-transition: opacity .3s $cubic;
+		}
 	}
 }
 .top header .nav.is-logo .navlogo{
@@ -500,6 +507,7 @@ header{
 		background: none;
 		padding: 80px ;
 		transition: none;
+		top:0 !important;
 		@include sp(){
 			padding: 30px 8%;
 		}
@@ -545,6 +553,7 @@ header{
 		background: none;
 		padding: 80px ;
 		transition: none;
+		top: 0 !important;
 		@include sp(){
 			padding: 30px 8%;
 		}
