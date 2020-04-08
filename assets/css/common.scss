@@ -26,6 +26,12 @@
    Common
 ========================================================================== */
 
+body.open,body.open-search,body.open-declaration{
+	height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px; /* 幅のリフローを避ける */
+}
+
 .wrap{
 	width: 100%;
 }

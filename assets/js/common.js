@@ -15,11 +15,10 @@ $('.infomation a').on('click',function(){
 		$('body').toggleClass('open-declaration');
 		$('.declaration').toggle(0);
 		$('.declaration').css('display','block');
-		$('.declaration-close').on('click',function(){
-				$('body').removeClass('open-declaration');
-			});
 });
-
+$('.declaration-close').on('click',function(){
+		$('body').removeClass('open-declaration');
+});
 
 var breakpoint = 1024;
 var winWidth;
