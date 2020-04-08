@@ -250,7 +250,7 @@ header{
 		&.is-animation{
 			padding: 40px 80px;
 			@include sp(){
-				padding: 30px 8% 30px;
+				padding: 30px 8% ;
 			}
 		}
 		.navinner{
@@ -331,16 +331,29 @@ header{
 }
 
 //トップページのみの処理
-.top header .nav {
-		top:calc(.7rem + 40px);
-		&.is-animation{
-			top:0;
-		}
-	.navlogo{
-		img{
-		opacity: 0;
-		transition: opacity .3s $cubic;
-		-webkit-transition: opacity .3s $cubic;
+.top header {
+	//infomation用値ここから▼▼▼
+	//padding-top: 50px;
+		.nav {
+			//padding: 130px 80px 80px;
+			top:54px;
+			@include sp(){
+				//padding: 80px 8% 30px;
+			}
+			&.is-animation{
+				//padding: 40px 80px ;
+				top:0;
+				@include sp(){
+					//padding: 30px 8%;
+				}
+			}
+			//infomation用値ここまで▲▲▲
+		.navlogo{
+			img{
+			opacity: 0;
+			transition: opacity .3s $cubic;
+			-webkit-transition: opacity .3s $cubic;
+			}
 		}
 	}
 }
