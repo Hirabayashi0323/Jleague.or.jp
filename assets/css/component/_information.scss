@@ -1,4 +1,5 @@
 .infomation{
+	display: flex !important;
 	background: $accent_black;
 	font-size: .7rem !important;
 	font-weight: bold;
@@ -62,6 +63,7 @@
 
 //画像
 .declaration{
+	display: block !important;
 	width: 100vw;
 	height: 100vh;
 	position: fixed !important;
@@ -116,4 +118,34 @@
 		 margin-bottom:60px;
 	 }
 	}
+}
+
+
+//トップページのみの処理
+.top header {
+	.container{
+		padding-top: 54px;
+	}
+	//padding-top: 50px;
+		.nav {
+			//padding: 130px 80px 80px;
+			top:54px;
+			@include sp(){
+				//padding: 80px 8% 30px;
+			}
+			&.is-animation{
+				//padding: 40px 80px ;
+				top:0;
+				@include sp(){
+					//padding: 30px 8%;
+				}
+			}
+	}
+}
+
+
+body.open-declaration{
+	height: 100vh;
+  overflow-y: hidden;
+  padding-right: 15px; /* 幅のリフローを避ける */
 }

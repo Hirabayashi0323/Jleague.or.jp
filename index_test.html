@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no">
+<title>公益社団法人 日本プロサッカーリーグ（Ｊリーグ）</title>
+<meta name="robots" content="index,follow">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!--#include virtual="/assets/inc/head.html" -->
+
+</head>
+
+<body id="top" class="top">
+<!--#include virtual="/assets/inc/loading.html" -->
+<!-- お知らせ -->
+<!--#include virtual="/assets/inc/information.html" -->
+  <div class="wrap">
+  	<header id="pagetop">
+      <!--#include virtual="/assets/inc/header_nav.html" -->
+      <div class="container">
+        <h1><img src="/assets/images/common/top_logo.png" srcset="/assets/images/common/top_logo.png 1x, /assets/images/common/top_logo@2x.png 2x" alt="J.LEAGUE"></h1>
+        <div class="kv">
+          <div class="kv__title">
+            <h2>Our Philosophy</h2>
+            <div class="dots"></div>
+          </div>
+          <ul class="kv__list">
+            <li>日本サッカーの水準向上及び<br>サッカーの普及促進のために</li>
+            <li>豊かなスポーツ文化の振興及び<br>国民の心身の健全な発達への寄与</li>
+            <li>国際社会における交流及び<br>親善への貢献</li>
+          </ul>
+    		</div>
+      </div>
+
+  	</header>
+  	<main class="main">
+      <section class="contents" id="contents">
+        <ul>
+          <li>
+            <a href="/aboutj/">
+              <h2><span>01</span>Ｊリーグとは</h2>
+              <p>組織やロゴ、年間スケジュールについて</p>
+            </a>
+          </li>
+          <li>
+            <a href="/management/">
+              <h2><span>02</span>経営情報</h2>
+              <p>リーグ・クラブ別経営情報、入場者数、理事会議事録など</p>
+            </a>
+          </li>
+          <li>
+            <a href="/chairman.html">
+              <h2><span>03</span>チェアマン</h2>
+              <p>社団法人日本プロサッカーリーグ理事長である村井満より</p>
+            </a>
+          </li>
+          <li>
+            <a href="/partner.html">
+              <h2><span>04</span>オフィシャルパートナー</h2>
+              <p>Ｊリーグを支えるパートナー企業様のご紹介</p>
+            </a>
+          </li>
+          <li>
+            <a href="/regulation/">
+              <h2><span>05</span>規約・規程</h2>
+              <p>Ｊリーグ規約、選手の契約、放送権について</p>
+            </a>
+          </li>
+          <li>
+            <a href="/terminology.html">
+              <h2><span>06</span>用語集</h2>
+              <p>Ｊリーグ、組織、大会などにおける用語説明</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="news" id="news">
+        <div class="news__title">
+          <a href="https://www.jleague.jp/release/" target="_blank">
+            <h2 class="blankLink__b"><span>07</span>ニュースリリース</h2>
+            <p>プレスリリースやイベント情報など</p>
+          </a>
+        </div>
+          <!-- <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <article>
+            <a href="/release/---/">
+              <time class="news__date">2020.03.31 17:40</time>
+              <h4>FUJI XEROX SUPER CUP 2020 ヴィッセル神戸優勝における 村井 満チェアマンコメント</h4>
+              <span class="news__tag">登録選手追加・変更・抹消のお知らせ</span>
+            </a>
+          </article>
+          <div class="moreBtn"><a href="/release/">もっと見る</a></div> -->
+      </section>
+  	</main>
+  	<!--/.main-->
+    <footer>
+      <!--#include virtual="/assets/inc/gnav.html" -->
+    </footer>
+  </div>
+
+<!--#include virtual="/assets/inc/js.html" -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script>
+//loding
+const cubic = '[.8, 0, .3, 1]'
+const cubicSvg = '[.075, .82, .165, 1]'
+
+// $(function(){
+//   if($.cookie('on_loding')){
+//     $('#loading').hide();
+//     console.log('２回目')
+//   } else {
+//     $('#loading').show();
+//     $.cookie('on_loding' , 'open' , { expires: 7,  path: '/index.html' });
+//   }
+//   return false;
+// });
+
+
+
+
+
+//Cookie取得
+var checkCookie = document.cookie;
+
+//Cookie内に【XXX】という文字列があるかないか判定。
+if(checkCookie.match("XXX")){
+  /* =====================================
+    2回目の訪問したときの処理
+  ========================================*/
+console.log('２回目')
+  $('#loading').hide();
+
+}else{
+  //Domain名取得
+  var domain = document.domain;
+  //Cookieの内容を格納　ブラウザ閉じるまで　テスト用
+  var visitorCookie = "visitorCookie=XXX; domain="+domain+"; path=/index_test.html;"
+  //Cookie有効期限指定（7日間）
+  //var visitorCookie = "visitorCookie=LODING; max-age=604800; domain="+domain+"; path=/index.html;"
+
+  //Cookieに書き込み
+  document.cookie = visitorCookie;
+  /* =====================================
+    1回目の訪問したときの処理
+  ========================================*/
+  //PC、SP出し分け
+    if (window.matchMedia( "(max-width: 1023px)" ).matches) {
+      //スマホ対応
+      $(function() {
+        $('#loading').css('display','flex');
+        $('#loading .bar').addClass('start');
+        $('#loading .bar')
+        .velocity({
+          opacity: 0
+        },{
+          delay:800,
+          duration: 300,
+          easing: cubic
+        });
+        $('#j-mark')
+        .velocity({
+          width: 100
+        },{
+          duration:500,
+          delay:500
+        }).velocity({
+          transform : 'scale(150, 150)'
+        },{
+          duration: 850,
+          easing: cubicSvg,
+          complete: function(){
+            $('#loading').velocity({
+              opacity: 0 ,
+              visibility:'hidden'
+            },{
+              duration: 300,
+              //delay:200,
+              easing: cubic
+            });
+          }
+        });
+        $('body').addClass('open-declaration');//information用
+      });
+    } else {
+      //PC対応
+      $(function() {
+        $('#loading').css('display','flex');
+        $('#loading .bar').addClass('start');
+        $('#loading .bar')
+        .velocity({
+          opacity: 0
+        },{
+          delay:800,
+          duration: 300,
+          easing: cubic
+        });
+        $('#j-mark')
+        .velocity({
+          width: 100
+        },{
+          duration:500,
+          delay:500
+        }).velocity({
+          transform : 'scale(150, 150)'
+        },{
+          duration: 700,
+          easing: cubicSvg,
+          complete: function(){
+            $('#loading').velocity({
+              opacity: 0 ,
+              visibility:'hidden'
+            },{
+              duration: 300,
+              //delay:200,
+              easing: cubic
+            });
+          }
+        });
+        $('body').addClass('open-declaration');//information用
+      });
+    }
+}
+
+
+
+//スライダー
+var kvSlideOpt;
+var kvSlider;
+
+//KVランダム表示
+var seed = Math.random();
+var randKv = seed ? Math.ceil(seed * 3 ) - 1 : 0;
+
+  kvSlideOpt = {
+    fade:true,
+    lazyLoad: 'progressive',
+    slidesToShow: 1,
+    autoplay: true,
+    dots:true,
+    arrows:false,
+    autoplaySpeed:4000,
+    speed:1000,
+    appendDots:$('.dots'),
+    initialSlide: randKv,
+    //dotsClass:'kv_dots',
+  };
+  kvSlider = $('.kv__list').slick(kvSlideOpt);
+
+</script>
+</body>
+</html>

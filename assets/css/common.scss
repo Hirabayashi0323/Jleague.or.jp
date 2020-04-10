@@ -20,13 +20,13 @@
 @import "component/_breadcrumb";
 @import "component/_accordion";
 @import "component/_contentlabels";
-@import "component/_information";
+@import "component/_information";//information不要時はここだけ削除
 
 /* ==========================================================================
    Common
 ========================================================================== */
 
-body.open,body.open-search,body.open-declaration{
+body.open,body.open-search{
 	height: 100vh;
   overflow-y: hidden;
   padding-right: 15px; /* 幅のリフローを避ける */
@@ -42,6 +42,13 @@ body.open,body.open-search,body.open-declaration{
 	@include sp(){
 		max-width: none;
 	}
+}
+
+/* ==========================================================================
+   Information
+========================================================================== */
+.information,.declaration{
+	display: none;
 }
 
 /* inview
@@ -332,33 +339,20 @@ header{
 
 //トップページのみの処理
 .top header {
-	//infomation用値ここから▼▼▼
-	//padding-top: 50px;
 		.nav {
-			//padding: 130px 80px 80px;
-			top:54px;
-			@include sp(){
-				//padding: 80px 8% 30px;
-			}
-			&.is-animation{
-				//padding: 40px 80px ;
-				top:0;
-				@include sp(){
-					//padding: 30px 8%;
-				}
-			}
-			//infomation用値ここまで▲▲▲
 		.navlogo{
-			img{
+			a{
+			visibility: hidden;
 			opacity: 0;
-			transition: opacity .3s $cubic;
-			-webkit-transition: opacity .3s $cubic;
+			transition: all .3s $cubic;
+			-webkit-transition: all .3s $cubic;
 			}
 		}
 	}
 }
 .top header .nav.is-logo .navlogo{
-	img{
+	a{
+		visibility: visible;
 	opacity: 1;
 	}
 }
@@ -1349,6 +1343,10 @@ footer,.gnav	{
 	transition: all .3s $cubic;
 	-webkit-transition: all .3s $cubic;
 	@include flexbox(wrap,center,center);
+	// display: none;
+	// flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
 }
 .spinner {
   width: 70px;
