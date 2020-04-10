@@ -125,6 +125,7 @@ const cubicSvg = '[.075, .82, .165, 1]'
   if (window.matchMedia( "(max-width: 1023px)" ).matches) {
     //スマホ対応
     $(function() {
+      $('#loading svg').css('opacity','1');
       $('#loading .bar').addClass('start');
       $('#loading .bar')
       .velocity({
@@ -161,6 +162,7 @@ const cubicSvg = '[.075, .82, .165, 1]'
   } else {
     //PC対応
     $(function() {
+      $('#loading svg').css('opacity','1');
       $('#loading .bar').addClass('start');
       $('#loading .bar')
       .velocity({
