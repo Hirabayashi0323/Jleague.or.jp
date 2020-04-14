@@ -19,17 +19,21 @@
 	&__title{
 		color: $accent_red;
 		border-right: solid 1px #252525;
+		width: calc(7em + 25px);
 		padding-right: 20px;
 		@include sp(){
 		 padding-right: 10px;
+		 width: calc(2em + 15px);
 	 }
 	}
 	&__txt{
 		padding-left: 20px;
+		width: calc(100% - (7em + 25px));
 		@include flexbox(nowrap,flex-start,baseline);
 		@include sp(){
 		 display: block;
 		 padding-left: 10px;
+		 width: calc(100% - (2em + 15px));
 	 }
 		span{
 			color: $accent_red !important;
@@ -55,7 +59,8 @@
 			}
 			@include sp(){
 			 padding-left: 0;
-			 width: 31em;
+			 //width: 31em;
+			 width: calc(100% - (2em + 15px));
 		 }
 		}
 	}
