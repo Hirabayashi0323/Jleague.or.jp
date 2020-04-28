@@ -1,7 +1,9 @@
 
 .contentlabels{
+	@include flexbox(nowrap,space-between,center);
 	margin: 0 auto 80px;
 	@include sp(){
+		display: block;
 		margin: 0 auto 60px;
 		padding: 0 8%;
 	}
