@@ -84,13 +84,13 @@
             <p>プレスリリースやイベント情報など</p>
           </a>
         </div>
-          <!-- <article>
-            <a href="/release/---/">
-              <time class="news__date">2020.00.00 00:00</time>
-              <h4></h4>
-              <span class="news__tag"></span>
-            </a>
-          </article> -->
+        <!-- <article>
+          <a href="/release/---/">
+            <time class="news__date">2020.00.00 00:00</time>
+            <h4></h4>
+            <span class="news__tag"></span>
+          </a>
+        </article> -->
       </section>
   	</main>
   	<!--/.main-->
@@ -101,87 +101,129 @@
 
 <!--#include virtual="/assets/inc/js.html" -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script>
 //loding
 const cubic = '[.8, 0, .3, 1]'
 const cubicSvg = '[.075, .82, .165, 1]'
 
-//PC、SP出し分け
-  if (window.matchMedia( "(max-width: 1023px)" ).matches) {
-    //スマホ対応
-    $(function() {
-      $('#loading svg').css('opacity','1');
-      $('#loading .bar').addClass('start');
-      $('#loading .bar')
-      .velocity({
-        opacity: 0
-      },{
-        delay:800,
-        duration: 300,
-        easing: cubic
+// $(function(){
+//   if($.cookie('on_loding')){
+//     $('#loading').hide();
+//     console.log('２回目')
+//   } else {
+//     $('#loading').show();
+//     $.cookie('on_loding' , 'open' , { expires: 7,  path: '/index.html' });
+//   }
+//   return false;
+// });
+
+
+
+
+
+//Cookie取得
+var checkCookie = document.cookie;
+
+//Cookie内に【XXX】という文字列があるかないか判定。
+if(checkCookie.match("XXX")){
+  /* =====================================
+    2回目の訪問したときの処理
+  ========================================*/
+console.log('２回目')
+  $('#loading').hide();
+  $('.wrap').show();
+}else{
+  //Domain名取得
+  var domain = document.domain;
+  //Cookieの内容を格納　ブラウザ閉じるまで　テスト用
+  //var visitorCookie = "visitorCookie=XXX; domain="+domain+"; path=/index_test.html;"
+  //Cookie有効期限指定（7日間）
+  var visitorCookie = "visitorCookie=XXX; max-age=604800; domain="+domain+"; path=/index.html;"
+
+  //Cookieに書き込み
+  document.cookie = visitorCookie;
+  /* =====================================
+    1回目の訪問したときの処理
+  ========================================*/
+  //PC、SP出し分け
+    if (window.matchMedia( "(max-width: 1023px)" ).matches) {
+      //スマホ対応
+      $(function() {
+        $('#loading svg').css('opacity','1');
+        $('#loading .bar').addClass('start');
+        $('#loading .bar')
+        .velocity({
+          opacity: 0
+        },{
+          delay:800,
+          duration: 300,
+          easing: cubic
+        });
+        $('#j-mark')
+        .velocity({
+          width: 100
+        },{
+          duration:500,
+          delay:500
+        }).velocity({
+          transform : 'scale(150, 150)'
+        },{
+          duration: 850,
+          easing: cubicSvg,
+          complete: function(){
+            $('#loading').velocity({
+              opacity: 0 ,
+              visibility:'hidden'
+            },{
+              duration: 300,
+              //delay:200,
+              easing: cubic
+            });
+          }
+        });
+        $('body').addClass('open-declaration');//information用
       });
-      $('#j-mark')
-      .velocity({
-        width: 100
-      },{
-        duration:500,
-        delay:500
-      }).velocity({
-        transform : 'scale(150, 150)'
-      },{
-        duration: 850,
-        easing: cubicSvg,
-        complete: function(){
-          $('#loading').velocity({
-            opacity: 0 ,
-            visibility:'hidden'
-          },{
-            duration: 300,
-            //delay:200,
-            easing: cubic
-          });
-        }
+    } else {
+      //PC対応
+      $(function() {
+        $('#loading svg').css('opacity','1');
+        $('#loading .bar').addClass('start');
+        $('#loading .bar')
+        .velocity({
+          opacity: 0
+        },{
+          delay:800,
+          duration: 300,
+          easing: cubic
+        });
+        $('#j-mark')
+        .velocity({
+          width: 100
+        },{
+          duration:500,
+          delay:500
+        }).velocity({
+          transform : 'scale(150, 150)'
+        },{
+          duration: 700,
+          easing: cubicSvg,
+          complete: function(){
+            $('#loading').velocity({
+              opacity: 0 ,
+              visibility:'hidden'
+            },{
+              duration: 300,
+              //delay:200,
+              easing: cubic
+            });
+          }
+        });
+        $('body').addClass('open-declaration');//information用
       });
-      $('body').addClass('open-declaration');
-    });
-  } else {
-    //PC対応
-    $(function() {
-      $('#loading svg').css('opacity','1');
-      $('#loading .bar').addClass('start');
-      $('#loading .bar')
-      .velocity({
-        opacity: 0
-      },{
-        delay:800,
-        duration: 300,
-        easing: cubic
-      });
-      $('#j-mark')
-      .velocity({
-        width: 100
-      },{
-        duration:500,
-        delay:500
-      }).velocity({
-        transform : 'scale(150, 150)'
-      },{
-        duration: 700,
-        easing: cubicSvg,
-        complete: function(){
-          $('#loading').velocity({
-            opacity: 0 ,
-            visibility:'hidden'
-          },{
-            duration: 300,
-            //delay:200,
-            easing: cubic
-          });
-        }
-      });
-      $('body').addClass('open-declaration');
-    });
-  }
+    }
+}
+
 
 
 //スライダー
