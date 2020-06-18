@@ -1,0 +1,154 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+html{
+	font-size: 125%;
+	@include sp{
+		font-size: 87.5%;
+	}
+}
+body{
+	//max-width: $max_width;
+	background: #fff;
+	font-size: 1em;//chrome対策でem使用
+	font-family: $fontJP;
+	font-weight: 400;
+	color: $text;
+	line-height: 2;
+	-moz-text-size-adjust : none;
+	-ms-text-size-adjust : 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust : 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: .025em;
+	@include sp{
+		line-height: 1.85;
+	}
+}
+
+a {
+	//transition: all 0.3s linear;
+	word-break : break-all;
+	text-decoration: none;
+	color: $accent_black;
+	&:hover{
+		text-decoration: none;
+		color: $accent_green;
+	}
+	&:visited,&:active{
+		text-decoration: none;
+	}
+}
+.is-hidden {
+	display: none;
+}
+.pc-hidden {
+	display: none ;
+}
+*{
+	box-sizing : border-box;
+}
+img{
+	vertical-align: bottom;
+}
+
+
+
+//sp
+@include sp(){
+
+	.sp-hidden {
+		display: none;
+	}
+	.pc-hidden {
+		display: block;
+	}
+	body {
+		min-width: 0;
+	}
+
+	.sp-scroll {
+		width: 100%;
+		overflow-x: auto;
+	}
+
+}
+
+//title
+h1,h2,h3,h4,h5,h6{
+	line-height: 1.5;
+	letter-spacing: .05em;
+	span{
+		font-family: $fontENG;
+		font-weight: 600;
+		letter-spacing: 0;
+	}
+}
+
+h1{font-size: 2.8rem; font-weight: 700;
+	@include sp{
+	font-size: 1.8rem;
+	}
+}
+h2{font-size: 2.2rem; font-weight: 700;
+	@include sp{
+	font-size: 1.6rem;
+	}
+}
+h3{font-size: 1.6rem; font-weight: 700;
+	@include sp{
+	font-size: 1.35rem;
+	}
+}
+h4{font-size: 1.2rem; font-weight: 700;
+	@include sp{
+	font-size: 1.15rem;
+	}
+}
+h5{font-size: 1rem; font-weight: 700;}
+h6{font-size: .8rem; font-weight: 700;
+	@include sp{
+	font-size: .85rem;
+	}
+}
+
+//text
+.txtLarge{font-size: 1.2rem;
+		@include sp{
+		font-size: 1.15rem;
+	}
+}
+.txtSmall{
+	font-size: .8rem;
+		@include sp{
+		font-size: .85rem;
+	}
+}
+.txtXsmall{
+	font-size: .7rem;
+	@include sp{
+	font-size: .8rem;
+	}
+}
+.txtXxsmall{
+	font-size: .6rem;
+	@include sp{
+	font-size: .7rem;
+	}
+}
+
+.txtBold{
+	font-weight: bold;
+}
+
+.txtCenter{
+	text-align: center !important;
+}
+.txtLeft{
+	text-align: left !important;
+}
+.txtRight{
+	text-align: right !important;
+}

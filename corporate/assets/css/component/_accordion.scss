@@ -1,0 +1,89 @@
+
+.panel {
+  display: none;
+  margin-bottom: 40px;
+  @include sp(){
+    margin-bottom: 30px;
+  }
+}
+
+.btnAcd{
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  border-top:5px $accent_green solid;
+  //border-bottom: 1px solid $accent_gray;
+  position: relative;
+  background: url(/corporate/assets/images/common/icon-accordion-open.svg) no-repeat 50%;
+  background-position-x: calc(100% - 20px);
+  transition:background .3s $cubic;
+  -webkit-transition: background .3s $cubic;
+  @include sp(){
+    background: url(/corporate/assets/images/common/icon-accordion-open-sp.svg) no-repeat 50%;
+    background-position-x: calc(100% - 10px);
+  }
+  &.open-accordion{
+    background: url(/corporate/assets/images/common/icon-accordion-close.svg) no-repeat 50%;
+    background-position-x: calc(100% - 20px);
+    @include sp(){
+      background: url(/corporate/assets/images/common/icon-accordion-close-sp.svg) no-repeat 50%;
+      background-position-x: calc(100% - 10px);
+    }
+  }
+  &::before{
+    position: absolute;
+    top: -5px;
+    left: 0;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: $accent_black;
+  }
+  &::after{
+    position: absolute;
+    top: -5px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: $accent_black;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s $cubic;
+    -webkit-transition: transform .3s $cubic;
+  }
+  &:hover::after {
+    transform: scale(1, 1);
+  }
+  h2{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 40px 80px 40px 0 ;
+    margin-bottom: 0 !important;
+    position: relative;
+    z-index: 1;
+    @include sp(){
+      padding: 15px 40px 20px 0;
+    }
+    &::before{
+      position: absolute;
+      top: -5px;
+      right: 0;
+      content: '';
+      width: 10px;
+      height: 5px;
+      background: #fff;
+    }
+    &::after{
+      position: absolute;
+      top: -5px;
+      right: 0;
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $accent_red;
+    }
+  }
+}
